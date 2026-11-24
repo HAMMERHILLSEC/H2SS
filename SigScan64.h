@@ -49,6 +49,10 @@ typedef CONST UMASK* PCUMASK;
 #define UMASK_WC ((UMASK) 0xFFFFU)
 #define UMASK_STACK_COUNT 64U
 
+#ifdef __cplusplus
+extern "C" {
+#endif // CPP
+
 /// <summary>
 /// Validates a masked signature, including named-capture width consistency.
 /// Does not allocate memory or read target bytes.
@@ -107,5 +111,9 @@ SIZE_T SearchForMaskedSignatureAll(
     _Out_writes_to_(MaxMatches, return) LPCBYTE* Matches,
     _In_ SIZE_T MaxMatches
 );
+
+#ifdef __cplusplus
+}
+#endif // CPP
 
 #endif // _HAMMERHILL_SIGSCAN_H
